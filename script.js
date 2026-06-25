@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="exec-award-card">
             <div class="exec-award-images single-img">
               <div class="award-img-box">
-                <img src="${a.image}" alt="${a.title} Certificate" class="exec-award-img" loading="lazy">
+                <img src="${a.image}" alt="${a.title} Certificate" class="exec-award-img" loading="lazy" decoding="async">
                 <span class="award-img-label">${a.label}</span>
               </div>
             </div>
@@ -317,13 +317,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Use dynamic data configs if available, otherwise fallback to static profiles
     const emailTarget = data ? data.email : 'sumant.singh@hotmail.com';
-    const whatsappPhone = data ? data.whatsapp : '66988329040';
+    const whatsappPhone = data ? data.whatsapp : '919121773501';
 
     if (submitWhatsAppBtn) {
-      const newSubmitWA = submitWhatsAppBtn.cloneNode(true);
-      submitWhatsAppBtn.parentNode.replaceChild(newSubmitWA, submitWhatsAppBtn);
-      
-      newSubmitWA.addEventListener('click', () => {
+      submitWhatsAppBtn.addEventListener('click', () => {
         const name = document.getElementById('c-name').value.trim();
         const email = document.getElementById('c-email').value.trim();
         const phone = document.getElementById('c-phone').value.trim();
@@ -342,11 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (contactForm) {
-      // Re-bind to clear older handlers
-      const newForm = contactForm.cloneNode(true);
-      contactForm.parentNode.replaceChild(newForm, contactForm);
-      
-      newForm.addEventListener('submit', (e) => {
+      contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const name = document.getElementById('c-name').value.trim();

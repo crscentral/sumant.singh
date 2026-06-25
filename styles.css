@@ -1546,6 +1546,83 @@ textarea.form-input {
   }
 }
 
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  background-color: #20ba5a;
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+/* Pulsing Outer Ring Animation */
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #25D366;
+  border-radius: 50%;
+  opacity: 0;
+  animation: wa-pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes wa-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustment to avoid overlap with mobile footer */
+@media (max-width: 1024px) {
+  .whatsapp-float {
+    bottom: 85px; /* Floats beautifully above the sticky mobile footer */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+  }
+  .whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
 /* ==========================================================================
    STUNNING TWO-PAGE EXECUTIVE PRINT STYLESHEET
    ========================================================================== */
@@ -1576,7 +1653,8 @@ textarea.form-input {
   .hero-awards-grid,
   .gallery-section,
   .horizontal-contact-section,
-  .exec-award-images {
+  .exec-award-images,
+  .whatsapp-float {
     display: none !important;
   }
 

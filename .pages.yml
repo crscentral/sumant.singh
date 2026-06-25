@@ -1,0 +1,208 @@
+media:
+  input: .
+  output: /
+
+content:
+  - name: config
+    label: Website Content Editor
+    type: file
+    path: content.json
+    fields:
+      - name: name
+        label: Full Name
+        type: string
+        required: true
+      - name: title
+        label: Primary Title
+        type: string
+        required: true
+      - name: subtitle
+        label: Professional Subtitle / Headline
+        type: string
+        required: true
+      - name: location
+        label: Location
+        type: string
+      - name: email
+        label: Contact Email ID
+        type: string
+      - name: phone
+        label: Contact Mobile Number
+        type: string
+      - name: whatsapp
+        label: WhatsApp Phone ID (e.g. 66988329040 - no + or leading zeros)
+        type: string
+      - name: lineId
+        label: LINE ID (Username)
+        type: string
+      - name: linkedin
+        label: LinkedIn Profile URL
+        type: string
+
+      - name: biographyTitle
+        label: Bio Section Title
+        type: string
+      - name: biographyText
+        label: Biography Paragraphs
+        type: list
+        field:
+          type: text
+          label: Paragraph
+
+      - name: metrics
+        label: Metrics Dashboard Items (Exactly 4)
+        type: list
+        fields:
+          - name: value
+            label: Metric Value (e.g. +15-20%)
+            type: string
+          - name: label
+            label: Metric Headline Title
+            type: string
+          - name: desc
+            label: Metric Description Text
+            type: text
+
+      - name: philosophyTitle
+        label: Philosophy Section Title
+        type: string
+      - name: philosophyIntro
+        label: Philosophy Intro Text
+        type: text
+      - name: philosophyItems
+        label: 6R Philosophy Pillars (Exactly 6)
+        type: list
+        fields:
+          - name: key
+            label: Pillar Name (e.g. Reputation)
+            type: string
+          - name: value
+            label: Primary Focus
+            type: string
+          - name: desc
+            label: Pillar Details
+            type: text
+
+      - name: heroAwards
+        label: Hero Section Awards Grid (Exactly 4)
+        type: list
+        fields:
+          - name: category
+            label: Awarding Association / Authority
+            type: string
+          - name: title
+            label: Award Name
+            type: string
+
+      - name: executiveAwards
+        label: Major achievements & Executive Awards (Exactly 4)
+        type: list
+        fields:
+          - name: crown
+            label: Crown Category/Focus (e.g. 🌱 Environmental Excellence)
+            type: string
+          - name: title
+            label: Award Title Name
+            type: string
+          - name: org
+            label: Awarding Organization
+            type: string
+          - name: text
+            label: Award Detailed Description Text
+            type: text
+          - name: image
+            label: Certificate / Trophy Image Filename (e.g. award_gri_trophy.jpg)
+            type: string
+          - name: label
+            label: Image Label (e.g. Trophy Detail)
+            type: string
+
+      - name: timeline
+        label: Career History Timeline Positions
+        type: list
+        fields:
+          - name: role
+            label: Position / Role Title
+            type: string
+          - name: company
+            label: Hotel / Resort & Company Name
+            type: string
+          - name: date
+            label: Date Duration (e.g. July 2024 – Present)
+            type: string
+          - name: location
+            label: Location (City, Country)
+            type: string
+          - name: category
+            label: Filter Category Tag (gm, gm ops, ops, fo)
+            type: string
+          - name: details
+            label: Achievements & Responsibilities Bullet Points
+            type: list
+            field:
+              type: text
+              label: Bullet Point
+
+      - name: skills
+        label: Professional Skills Sections (Exactly 4 categories)
+        type: list
+        fields:
+          - name: category
+            label: Skill Category Name
+            type: string
+          - name: items
+            label: Skills List
+            type: list
+            field:
+              type: string
+              label: Skill Badge
+
+      - name: education
+        label: Education Degrees
+        type: list
+        fields:
+          - name: degree
+            label: Degree Name
+            type: string
+          - name: school
+            label: Institution Name
+            type: string
+          - name: date
+            label: Year Duration
+            type: string
+
+      - name: personalDetails
+        label: Personal Statistics Details (Expandable Box)
+        type: list
+        fields:
+          - name: label
+            label: Field Label (e.g. Nationality)
+            type: string
+          - name: value
+            label: Value
+            type: string
+
+      - name: languages
+        label: Languages Profile
+        type: list
+        fields:
+          - name: language
+            label: Language
+            type: string
+          - name: level
+            label: Proficiency Level
+            type: string
+
+      - name: certifications
+        label: Licenses & Professional Certifications
+        type: list
+        field:
+          type: string
+          label: Certification Name
+
+      - name: memberships
+        label: Professional Association Memberships
+        type: list
+        field:
+          type: string
+          label: Membership Name
