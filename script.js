@@ -11,9 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(data => {
       // 1. Populate Personal and Contact Metadata
-      document.title = `${data.name} - Executive Biodata & Portfolio`;
-      document.querySelector('.hero-title').textContent = data.name;
-      document.querySelector('.hero-subtitle').textContent = data.subtitle || data.title;
+      const heroTitle = document.querySelector('.hero-title');
+      if (heroTitle) {
+        document.title = `${data.name} - Executive Biodata & Portfolio`;
+        heroTitle.textContent = data.name;
+      }
+      const heroSubtitle = document.querySelector('.hero-subtitle');
+      if (heroSubtitle) {
+        heroSubtitle.textContent = data.subtitle || data.title;
+      }
       
       // Update quick contacts in header
       const contactLinks = document.querySelectorAll('.hero-content .contact-link');
