@@ -163,6 +163,11 @@ strong {
   letter-spacing: 2px;
   color: var(--color-accent);
   transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.logo-text:hover {
+  opacity: 0.8;
 }
 
 .action-controls {
