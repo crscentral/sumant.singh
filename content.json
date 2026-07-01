@@ -185,23 +185,7 @@
   ],
   "executiveAwards": [
     {
-      "crown": "🏆 Regional Champion",
-      "title": "GRI Excellence Award 2026",
-      "org": "South East Asia & Australia (SEAA)",
-      "text": "Recognized as The Best Fraser Hotel In Guest Satisfaction in the entire South East Asia and Australia region for delivering unforgettable guest experiences, achieving stellar satisfaction cores, and strengthening lasting brand loyalty.",
-      "image": "award_gri_trophy.jpg",
-      "label": "GRI Trophy 2026"
-    },
-    {
-      "crown": "🌱 Environmental Excellence",
-      "title": "Green Hotel Thailand Golden Award",
-      "org": "Green Hotel Thailand",
-      "text": "Achieved the prestigious Golden Award at Fraser Suites Sukhumvit Bangkok. Recognized for high-level ecological dedication, environmental responsibility, waste reduction strategies, and leading sustainable luxury hospitality initiatives.",
-      "image": "award_green_hotel.jpg",
-      "label": "Golden G Award"
-    },
-    {
-      "crown": "👑 Global Leadership",
+      "crown": "Global Leadership",
       "title": "Global General Manager Award 2026",
       "org": "Recognized by Top Hoteliers",
       "text": "Named as one of the elite Global General Managers for leading with operational excellence and high service benchmarks at Frasers Hospitality Bangkok.",
@@ -209,12 +193,28 @@
       "label": "Top Hoteliers"
     },
     {
-      "crown": "🎖️ Industry Influence",
+      "crown": "Regional Champion",
+      "title": "GRI Excellence Award 2026",
+      "org": "South East Asia & Australia (SEAA)",
+      "text": "Recognized as The Best Fraser Hotel In Guest Satisfaction in the entire South East Asia and Australia region for delivering unforgettable guest experiences, achieving stellar satisfaction cores, and strengthening lasting brand loyalty.",
+      "image": "award_gri_trophy.jpg",
+      "label": "GRI Trophy 2026"
+    },
+    {
+      "crown": "Industry Influence",
       "title": "Thailand's Most Influential General Managers Award 2025",
       "org": "Recognized by CMO Asia Awards",
       "text": "Honored as one of the Top 7 Thailand's Most Influential General Managers for the year 2025, celebrating prominent leadership and industry influence.",
       "image": "award_cmo_asia.jpg",
       "label": "CMO Asia Award"
+    },
+    {
+      "crown": "Environmental Excellence",
+      "title": "Green Hotel Thailand Golden Award",
+      "org": "Green Hotel Thailand",
+      "text": "Achieved the prestigious Golden Award at Fraser Suites Sukhumvit Bangkok. Recognized for high-level ecological dedication, environmental responsibility, waste reduction strategies, and leading sustainable luxury hospitality initiatives.",
+      "image": "award_green_hotel.jpg",
+      "label": "Golden G Award"
     }
   ],
   "heroAwards": [
@@ -224,14 +224,14 @@
       "desc": "Recognized for leading with operational excellence and high service benchmarks at Frasers Hospitality Bangkok."
     },
     {
-      "category": "RECOGNIZED BY CMO ASIA AWARDS",
-      "title": "Thailand's Most Influential General Managers Award 2025",
-      "desc": "Honored among the Top 7 Thailand general managers for prominent industry leadership and influence."
-    },
-    {
       "category": "SOUTH EAST ASIA & AUSTRALIA (SEAA)",
       "title": "GRI Excellence Award 2026",
       "desc": "Awarded Best Fraser Hotel in South East Asia & Australia for outstanding guest satisfaction."
+    },
+    {
+      "category": "RECOGNIZED BY CMO ASIA AWARDS",
+      "title": "Thailand's Most Influential General Managers Award 2025",
+      "desc": "Honored among the Top 7 Thailand general managers for prominent industry leadership and influence."
     },
     {
       "category": "GREEN HOTEL THAILAND",

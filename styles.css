@@ -69,6 +69,11 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   background-color: var(--color-bg-base);
   color: var(--color-text-main);
@@ -76,7 +81,6 @@ body {
   font-size: 16px;
   line-height: 1.6;
   transition: background-color 0.5s ease, color 0.3s ease;
-  overflow-x: hidden;
   padding-bottom: 80px; /* Leave space for mobile sticky menu */
 }
 
@@ -1496,6 +1500,39 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
+  /* Action Bar Responsive adjustments to prevent overflow */
+  #btn-print {
+    display: none !important; /* Hide on mobile action bar, print button shifts to mobile footer */
+  }
+
+  .action-bar-container {
+    padding: 10px 16px;
+  }
+
+  .logo-text {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+
+  .action-controls {
+    gap: 8px;
+  }
+
+  .action-controls .btn-text {
+    display: none;
+  }
+
+  .action-controls .btn-small {
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .action-controls .btn-icon-svg {
+    margin: 0;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1525,10 +1562,6 @@ textarea.form-input {
   .mobile-footer {
     display: block;
   }
-
-  .btn-print {
-    display: none; /* Hide on mobile action bar, print button shifts to mobile footer */
-  }
   
   .timeline-meta {
     flex-direction: column;
@@ -1552,6 +1585,19 @@ textarea.form-input {
 
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+  .action-bar-container {
+    padding: 8px 12px;
+  }
+  .action-controls {
+    gap: 6px;
   }
 }
 
