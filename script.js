@@ -181,20 +181,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // 7. Populate Skills Sidebar Grid
-      const skillsContainer = document.querySelector('.skills-container');
+      const skillsContainer = document.querySelector('.skills-wrapper');
       if (skillsContainer && data.skills) {
-        skillsContainer.innerHTML = data.skills.map(s => `
-          <div class="skill-category">
-            <span class="skill-cat-title">${s.category}</span>
-            <div class="skill-badges">
-              ${s.items.map(item => `<span class="skill-badge">${item}</span>`).join('')}
-            </div>
-          </div>
-        `).join('');
+        const flatSkills = [];
+        data.skills.forEach(s => {
+          s.items.forEach(item => {
+            flatSkills.push(item);
+          });
+        });
+        skillsContainer.innerHTML = flatSkills.map(item => `<span class="skill-badge">${item}</span>`).join('');
       }
 
       // 8. Populate Education Timeline
-      const eduContainer = document.querySelector('.education-timeline');
+      const eduContainer = document.querySelector('.edu-timeline');
       if (eduContainer && data.education) {
         eduContainer.innerHTML = data.education.map(e => `
           <div class="edu-item">
@@ -217,27 +216,17 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
       }
 
-      // 10. Populate Languages Profile
-      const langContainer = document.querySelector('.languages-grid');
-      if (langContainer && data.languages) {
-        langContainer.innerHTML = data.languages.map(l => `
-          <div class="lang-row">
-            <span class="lang-name">${l.language}</span>
-            <span class="lang-level">${l.level}</span>
-          </div>
-        `).join('');
-      }
-
-      // 11. Populate Certifications
-      const certList = document.querySelector('.certifications-card .timeline-details');
-      if (certList && data.certifications) {
-        certList.innerHTML = data.certifications.map(c => `<li>${c}</li>`).join('');
-      }
-
-      // 12. Populate Memberships
-      const memList = document.querySelector('.memberships-card .timeline-details');
-      if (memList && data.memberships) {
-        memList.innerHTML = data.memberships.map(m => `<li>${m}</li>`).join('');
+      // 10. Populate Certifications & Memberships
+      const certList = document.querySelector('.certs-card .styled-list');
+      if (certList) {
+        let listHtml = '';
+        if (data.certifications) {
+          listHtml += data.certifications.map(c => `<li><strong>${c}</strong></li>`).join('');
+        }
+        if (data.memberships) {
+          listHtml += data.memberships.map(m => `<li>${m}</li>`).join('');
+        }
+        certList.innerHTML = listHtml;
       }
 
       // Initialize control event listeners with dynamically loaded parameters
@@ -356,6 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Use dynamic data configs if available, otherwise fallback to static profiles
     const emailTarget = data ? data.email : 'sumant.singh@hotmail.com';
     const whatsappPhone = data ? data.whatsapp : '919121773501';
+    const nameTarget = data ? data.name : (isSourav ? 'Sourav Singh' : 'Sumant Singh');
 
     if (submitWhatsAppBtn) {
       submitWhatsAppBtn.addEventListener('click', () => {
@@ -369,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
-        const waText = `Hello Sumant,\n\nMy name is *${name}* (${email}${phone ? ', ' + phone : ''}).\nI reviewed your portfolio and would like to connect.\n\n*Message Details:*\n"${message}"`;
+        const waText = `Hello ${nameTarget},\n\nMy name is *${name}* (${email}${phone ? ', ' + phone : ''}).\nI reviewed your portfolio and would like to connect.\n\n*Message Details:*\n"${message}"`;
         const waUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(waText)}`;
         
         window.open(waUrl, '_blank');
@@ -385,8 +375,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const phone = document.getElementById('c-phone').value.trim();
         const message = document.getElementById('c-message').value.trim();
 
-        const emailSubject = `Executive Inquiry - Sumant Singh Portfolio (from ${name})`;
-        const emailBody = `Dear Sumant,\n\nI reviewed your executive portfolio and would like to get in touch regarding professional opportunities.\n\nMessage:\n"${message}"\n\nContact Details:\n- Name: ${name}\n- Email: ${email}\n- Phone: ${phone || 'Not provided'}\n\nBest regards,\n${name}`;
+        const emailSubject = `Executive Inquiry - ${nameTarget} Portfolio (from ${name})`;
+        const emailBody = `Dear ${nameTarget},\n\nI reviewed your executive portfolio and would like to get in touch regarding professional opportunities.\n\nMessage:\n"${message}"\n\nContact Details:\n- Name: ${name}\n- Email: ${email}\n- Phone: ${phone || 'Not provided'}\n\nBest regards,\n${name}`;
 
         const mailtoUrl = `mailto:${emailTarget}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
         
