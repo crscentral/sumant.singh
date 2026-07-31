@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Use dynamic data configs if available, otherwise fallback to static profiles
     const emailTarget = data ? data.email : 'sumant.singh@hotmail.com';
     const whatsappPhone = data ? data.whatsapp : '919121773501';
-    const nameTarget = data ? data.name : (isSourav ? 'Sourav Singh' : 'Sumant Singh');
+    const firstName = isSourav ? 'Sourav' : 'Sumant';
 
     if (submitWhatsAppBtn) {
       submitWhatsAppBtn.addEventListener('click', () => {
@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
-        const waText = `Hello ${nameTarget},\n\nMy name is *${name}* (${email}${phone ? ', ' + phone : ''}).\nI reviewed your portfolio and would like to connect.\n\n*Message Details:*\n"${message}"`;
+        const waText = `Hello ${firstName},\n\nMy name is *${name}* (${email}${phone ? ', ' + phone : ''}).\nI reviewed your portfolio and would like to connect.\n\n*Message Details:*\n"${message}"`;
         const waUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(waText)}`;
         
         window.open(waUrl, '_blank');
@@ -375,8 +375,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const phone = document.getElementById('c-phone').value.trim();
         const message = document.getElementById('c-message').value.trim();
 
-        const emailSubject = `Executive Inquiry - ${nameTarget} Portfolio (from ${name})`;
-        const emailBody = `Dear ${nameTarget},\n\nI reviewed your executive portfolio and would like to get in touch regarding professional opportunities.\n\nMessage:\n"${message}"\n\nContact Details:\n- Name: ${name}\n- Email: ${email}\n- Phone: ${phone || 'Not provided'}\n\nBest regards,\n${name}`;
+        const emailSubject = `Executive Inquiry - ${firstName} Portfolio (from ${name})`;
+        const emailBody = `Dear ${firstName},\n\nI reviewed your executive portfolio and would like to get in touch regarding professional opportunities.\n\nMessage:\n"${message}"\n\nContact Details:\n- Name: ${name}\n- Email: ${email}\n- Phone: ${phone || 'Not provided'}\n\nBest regards,\n${name}`;
 
         const mailtoUrl = `mailto:${emailTarget}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
         
