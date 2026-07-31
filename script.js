@@ -41,10 +41,36 @@ document.addEventListener('DOMContentLoaded', () => {
         linkedinLink.setAttribute('href', data.linkedin);
       }
 
-      // Update hero bio paragraphs
+      // Update hero bio paragraphs with expandable Read More toggle
       const bioElement = document.querySelector('.hero-bio');
       if (bioElement && data.biographyText && data.biographyText.length > 0) {
-        bioElement.innerHTML = data.biographyText.join(' ');
+        const previewText = data.biographyText[0];
+        const remainingText = data.biographyText.slice(1).map(p => `<p class="bio-para">${p}</p>`).join('');
+        
+        bioElement.innerHTML = `
+          <p class="bio-preview">${previewText}</p>
+          <div class="bio-more" style="display: none;">
+            ${remainingText}
+          </div>
+          <button id="btn-read-more" class="btn-read-more" aria-expanded="false">Read More</button>
+        `;
+        
+        const btnReadMore = document.getElementById('btn-read-more');
+        const bioMore = bioElement.querySelector('.bio-more');
+        if (btnReadMore && bioMore) {
+          btnReadMore.addEventListener('click', () => {
+            const isExpanded = btnReadMore.getAttribute('aria-expanded') === 'true';
+            if (isExpanded) {
+              bioMore.style.display = 'none';
+              btnReadMore.textContent = 'Read More';
+              btnReadMore.setAttribute('aria-expanded', 'false');
+            } else {
+              bioMore.style.display = 'flex';
+              btnReadMore.textContent = 'Read Less';
+              btnReadMore.setAttribute('aria-expanded', 'true');
+            }
+          });
+        }
       }
       
       // 2. Populate Metrics Dashboard

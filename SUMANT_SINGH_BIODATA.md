@@ -17,9 +17,10 @@
 
 ---
 
-### PERSONAL PROFILE
+With over 18 years of comprehensive leadership experience in luxury hotels, resorts, and destination properties across India, Thailand, and Africa, I specialize in driving operational excellence, guest delight, commercial performance, and brand equity. My journey has spanned world-renowned brands including Frasers Hospitality, The Lalit Suri Hospitality Group, MGallery Hotel Collection (Accor), Le Meridien, and The Oberoi Group, where I have consistently delivered improvements in guest satisfaction, profitability, team capability, and market positioning.
 
-A seasoned, professionally confident, and highly resourceful hospitality leader with **over 16 years of comprehensive leadership experience** in luxury hotels, resorts, and destination properties across **India, Thailand, and Africa**. Recognized expert in LQA standards, brand reclassification audits, and operational excellence. Adept at transforming properties into high-value experiential destinations while building motivated, high-performing service cultures.
+I am known for building high-performing, service-driven cultures where teams feel empowered, motivated, and aligned toward delivering exceptional experiences. My leadership approach combines strategic business insight with hands-on operational expertise across Rooms Division, Food & Beverage, Sales, Front Office & Guest Relations, and Full Resort/Hotel Operations Management.
+
 
 ---
 
