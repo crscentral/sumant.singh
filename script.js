@@ -48,11 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const remainingText = data.biographyText.slice(1).map(p => `<p class="bio-para">${p}</p>`).join('');
         
         bioElement.innerHTML = `
-          <p class="bio-preview">${previewText}</p>
+          <p class="bio-preview">
+            ${previewText}
+            <button id="btn-read-more" class="btn-read-more" aria-expanded="false">Read More</button>
+          </p>
           <div class="bio-more" style="display: none;">
             ${remainingText}
           </div>
-          <button id="btn-read-more" class="btn-read-more" aria-expanded="false">Read More</button>
         `;
         
         const btnReadMore = document.getElementById('btn-read-more');
