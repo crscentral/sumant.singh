@@ -2,10 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   // 1. Dynamic Content Loader (JSON Fetch with HTML Fallback Failsafe)
   // ==========================================================================
-  fetch('./content.json')
+  const isSourav = document.body.id === 'sourav-page';
+  const jsonPath = isSourav ? './sourav_content.json' : './content.json';
+  fetch(jsonPath)
     .then(response => {
       if (!response.ok) {
-        throw new Error('Local content.json load failed, using static HTML fallback');
+        throw new Error(`Local ${jsonPath} load failed, using static HTML fallback`);
       }
       return response.json();
     })
@@ -140,13 +142,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const execAwardsContainer = document.querySelector('.awards-features-grid');
       if (execAwardsContainer && data.executiveAwards) {
         execAwardsContainer.innerHTML = data.executiveAwards.map(a => `
-          <div class="exec-award-card">
+          <div class="exec-award-card ${a.image ? '' : 'no-image'}">
+            ${a.image ? `
             <div class="exec-award-images single-img">
               <div class="award-img-box">
                 <img src="${a.image}" alt="${a.title} Certificate" class="exec-award-img" loading="lazy" decoding="async">
                 <span class="award-img-label">${a.label}</span>
               </div>
             </div>
+            ` : ''}
             <div class="exec-award-info">
               <span class="award-crown">${a.crown}</span>
               <h3>${a.title}</h3>

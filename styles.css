@@ -186,6 +186,37 @@ strong {
   opacity: 0.8;
 }
 
+.logo-switcher {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-link {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.logo-link.active {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 2px;
+}
+
+.logo-link:hover {
+  color: var(--color-text-main);
+}
+
+.logo-separator {
+  color: var(--color-border);
+  font-size: 1.1rem;
+}
+
 .action-controls {
   display: flex;
   gap: var(--spacing-sm);
@@ -1103,6 +1134,10 @@ strong {
   align-items: center;
 }
 
+.exec-award-card.no-image {
+  grid-template-columns: 1fr;
+}
+
 .exec-award-card:last-of-type {
   border-bottom: none;
   padding-bottom: 0;
@@ -1564,6 +1599,19 @@ textarea.form-input {
     letter-spacing: 1px;
   }
 
+  .logo-link {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+
+  .logo-last-name {
+    display: none;
+  }
+
+  .logo-switcher {
+    gap: 8px;
+  }
+
   .action-controls {
     gap: 8px;
   }
@@ -1642,6 +1690,15 @@ textarea.form-input {
   .logo-text {
     font-size: 0.85rem;
     letter-spacing: 0.5px;
+  }
+
+  .logo-link {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-switcher {
+    gap: 6px;
   }
   .action-bar-container {
     padding: 8px 12px;
