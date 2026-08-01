@@ -1022,8 +1022,8 @@ strong {
 
 /* Skills Competencies */
 .skills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
 
@@ -1035,6 +1035,10 @@ strong {
   padding: 6px 12px;
   border-radius: 20px;
   transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .skill-badge:hover {
