@@ -613,7 +613,27 @@ strong {
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 40px;
-  align-items: start;
+  align-items: stretch;
+}
+
+.career-column {
+  height: 100%;
+}
+
+.timeline-card {
+  height: 100%;
+  margin-bottom: 0 !important;
+}
+
+.sidebar-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.sidebar-column .section-card {
+  margin-bottom: 0 !important;
 }
 
 /* Card Design Framework */
