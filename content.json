@@ -246,15 +246,15 @@
   "skills": [
     {
       "category": "Operational Strategy",
-      "items": ["P&L Management", "GOP Optimization", "Asset Stewardship", "Renovation Operations", "Brand Compliance", "Multi-Unit Supervision"]
+      "items": ["P&L Management", "GOP Optimization", "Profit Maximization", "Renovation Operations", "Brand Compliance", "Multi-Unit Supervision"]
     },
     {
       "category": "Commercial & Yield",
-      "items": ["RevPAR Maximization", "Average Room Rate Expansion", "Digital Reputation Growth", "TripAdvisor Optimization", "Yield Management", "Luxury Segment Strategy"]
+      "items": ["RevPAR Maximization", "Average Room Rate Expansion", "Cost Optimization", "Reputation Growth", "Yield Management", "Luxury Segment Strategy"]
     },
     {
       "category": "Service Excellence",
-      "items": ["LQA Standards Expert", "Frasers Quality Audits", "Guest Delight Ecosystems", "Complaint Resolution", "Premium Service Mapping", "VIP Protocol Operations"]
+      "items": ["LQA Standards Expert", "Brand Quality Audits", "Guest Delight Ecosystems", "Complaint Resolution", "Premium Service Mapping", "VIP Protocol Operations"]
     },
     {
       "category": "Stewardship & Governance",

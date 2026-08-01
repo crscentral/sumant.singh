@@ -189,7 +189,23 @@ document.addEventListener('DOMContentLoaded', () => {
             flatSkills.push(item);
           });
         });
-        skillsContainer.innerHTML = flatSkills.map(item => `<span class="skill-badge">${item}</span>`).join('');
+        skillsContainer.innerHTML = flatSkills.map(item => {
+          const isHighlighted = !isSourav && [
+            "P&L Management",
+            "GOP Optimization",
+            "Brand Compliance",
+            "Yield Management",
+            "Guest Delight Ecosystems",
+            "RevPAR Maximization",
+            "Green Hotel Practices",
+            "Key Stakeholder Relations",
+            "Profit Maximization",
+            "Reputation Growth",
+            "Brand Quality Audits",
+            "Cost Optimization"
+          ].includes(item.trim());
+          return `<span class="skill-badge${isHighlighted ? ' font-strong' : ''}">${item}</span>`;
+        }).join('');
       }
 
       // 8. Populate Education Timeline
