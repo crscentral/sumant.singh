@@ -95,6 +95,71 @@
       width: 80px;
       height: 80px;
     }
+    
+    /* Dropdown system overrides */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-toggle {
+      border: none;
+      outline: none;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      margin-top: 6px;
+      background-color: var(--color-bg-base);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+      min-width: 190px;
+      z-index: 1000;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    @media (hover: hover) {
+      .dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .dropdown.show .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .dropdown-item {
+      display: block;
+      padding: 10px 16px;
+      color: var(--color-text-main);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-align: left;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+    .dropdown-item:hover {
+      background-color: rgba(var(--color-accent-rgb), 0.1);
+      color: var(--color-accent);
+    }
+    .dropdown-item:not(:last-child) {
+      border-bottom: 1px solid var(--color-border);
+    }
+    @media (max-width: 1024px) {
+      .dropdown-toggle .dropdown-arrow-svg {
+        display: none !important;
+      }
+      .dropdown-menu {
+        min-width: 170px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -126,10 +191,17 @@
           <svg class="btn-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span class="btn-text">Print / PDF</span>
         </button>
-        <a href="resume.pdf" target="_blank" class="btn btn-primary btn-small" download="Sumant_Singh_Resume.pdf">
-          <svg class="btn-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          <span class="btn-text">Resume</span>
-        </a>
+        <div class="dropdown">
+          <button class="btn btn-primary btn-small dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Resume Options Menu">
+            <svg class="btn-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <span class="btn-text">Resume</span>
+            <svg class="dropdown-arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px; height:12px; margin-left:6px; display:inline-block; vertical-align:middle;"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="resume.pdf" target="_blank" download="Sumant_Singh_Brief_Resume.pdf" class="dropdown-item">Brief Resume</a>
+            <a href="sumant_comprehensive_resume.pdf" target="_blank" download="Sumant_Singh_Comprehensive_Resume.pdf" class="dropdown-item">Comprehensive Resume</a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -1057,5 +1129,25 @@
       <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.335 4.97L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.218h.004c5.506 0 9.99-4.478 9.99-9.985C22.007 6.478 17.519 2 12.012 2zm5.722 14.125c-.25.702-1.226 1.3-1.742 1.393-.466.084-1.077.155-3.14-.693-2.637-1.082-4.35-3.766-4.482-3.942-.132-.176-1.076-1.428-1.076-2.723 0-1.295.679-1.932.92-2.193.242-.261.528-.326.704-.326h.542c.174 0 .408.065.638.614.23.548.788 1.922.856 2.059.068.137.113.297.022.479-.09.182-.136.296-.272.455-.136.159-.286.356-.408.478-.136.136-.279.285-.12.557.158.272.705 1.163 1.512 1.882.807.72 1.486.942 1.696 1.048.21.106.33.09.453-.05.123-.14.526-.61.666-.818.14-.208.279-.176.47-.106.19.07 1.211.571 1.417.674.205.103.342.154.393.243.05.088.05.513-.2 1.215z"/>
     </svg>
   </a>
+
+  <script>
+    // Click toggle for resume download dropdown menu
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdownToggle = document.querySelector('.dropdown-toggle');
+      const dropdown = document.querySelector('.dropdown');
+      
+      if (dropdownToggle && dropdown) {
+        dropdownToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          dropdown.classList.toggle('show');
+        });
+        
+        // Hide dropdown when clicking anywhere else
+        document.addEventListener('click', () => {
+          dropdown.classList.remove('show');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
